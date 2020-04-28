@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-ARG VER
+ARG LOG_COMMENT
 
 RUN apt-get update && apt-get install -y software-properties-common
 
