@@ -1,0 +1,24 @@
+name: {{ VER }}
+file: /var/log/server/status
+format: "{log_time} server status: {log_colour}"
+frequency:
+  seconds: 11
+offset:
+  seconds: 0
+amount: 1
+fields:
+  log_time:
+    type: timestamp
+    format: "%Y-%m-%dT%H:%M:%SZ"
+  log_colour:
+    type: chance
+    repeat: 11
+    change: 0.25
+    value: green
+    choices:
+      - option: red
+        weight: 0.2
+      - option: yellow
+        weight: 0.2
+      - option: green
+        weight: 0.6
